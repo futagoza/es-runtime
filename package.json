@@ -1,0 +1,33 @@
+{
+    "name": "es-runtime",
+    "version": "0.0.0",
+    "description": "@babel/(runtime && polyfill)",
+    "keywords": [
+        "babel",
+        "runtime",
+        "polyfill",
+        "core-js",
+        "regenerator"
+    ],
+    "repository": "futagoza/es-runtime",
+    "bugs": "https://github.com/futagoza/es-runtime/issues",
+    "license": "MIT",
+    "author": "Futago-za Ryuu",
+    "files": [
+        "polyfill.js",
+        "postinstall.js"
+    ],
+    "main": "polyfill.js",
+    "scripts": {
+        "postinstall": "node postinstall.js",
+        "lint": "eslint *.js",
+        "postversion": "git push --follow-tags && npm publish"
+    },
+    "devDependencies": {
+        "eslint": "latest",
+        "eslint-config-futagozaryuu": "latest"
+    },
+    "engines": {
+        "node": ">= 4"
+    }
+}
