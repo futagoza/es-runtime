@@ -18,6 +18,7 @@
         "postinstall.js"
     ],
     "main": "polyfill.js",
+    "bin": "postinstall.js",
     "scripts": {
         "postinstall": "node postinstall.js",
         "lint": "eslint *.js",
