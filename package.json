@@ -1,6 +1,6 @@
 {
     "name": "es-runtime",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "ensure @babel/(runtime && polyfill) are installed",
     "keywords": [
         "babel",
