@@ -21,13 +21,15 @@
     "bin": "postinstall.js",
     "scripts": {
         "postinstall": "node postinstall.js",
-        "lint": "eslint *.js",
+        "lint": "eslint *.js test/*.js",
+        "test": "rimraf test/node_modules && node postinstall --module test && node test/assert",
         "postversion": "git push --follow-tags && npm publish"
     },
     "dependencies": {
         "semver": "latest"
     },
     "devDependencies": {
+        "rimraf": "latest",
         "eslint": "latest",
         "eslint-config-futagozaryuu": "latest"
     },
