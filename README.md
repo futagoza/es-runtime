@@ -1,3 +1,8 @@
+[![Build status](https://api.travis-ci.org/futagoza/es-runtime.svg)](https://travis-ci.org/futagoza/es-runtime)
+[![npm version](https://img.shields.io/npm/v/es-runtime.svg)](https://www.npmjs.com/package/es-runtime)
+[![dependencies](https://img.shields.io/david/futagoza/es-runtime.svg)](https://david-dm.org/futagoza/es-runtime)
+[![License](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
+
 _es-runtime_ simply ensures @babel/(runtime && polyfill) are installed correctly. Why is this useful?
 If you still use Node.js v4, then it's a no brainer, but if you use Node.js v6+, then it's for a simpler setup.
 
