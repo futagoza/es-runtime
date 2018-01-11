@@ -85,9 +85,9 @@ function install( $dependency, $version ) {
 
 let $packageData;
 
-if ( MODULE === -1 && process.cwd() === __dirname ) {
+if ( MODULE === -1 && ! ( /node_modules/ ).test( __dirname ) ) {
 
-    debug( `Cannot run in ${ __dirname }` );
+    debug( `Unless '--module' is set, cannot run in ${ __dirname }` );
     process.exit( 0 );
 
 }
