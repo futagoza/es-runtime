@@ -92,12 +92,15 @@ if ( MODULE === -1 && ! ( /node_modules/ ).test( __dirname ) ) {
 
 }
 
-if ( existsSync( $package ) ) {
+if ( ! existsSync( $package ) ) {
 
-    $dependencies.parent = readJSON( $package ).dependencies || {};
-    if ( NO_SAVE ) $packageData = readFileSync( $package, "utf8" );
+    debug( `Unless a 'package.json' exists, cannot run in ${ $module }` );
+    process.exit( 0 );
 
 }
+
+$dependencies.parent = readJSON( $package ).dependencies || {};
+if ( NO_SAVE ) $packageData = readFileSync( $package, "utf8" );
 
 $dependencies.required.forEach( $dependency => {
 
