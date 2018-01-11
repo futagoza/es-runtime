@@ -36,7 +36,6 @@ You can also use _es-runtime_ during development or in other npm scripts by call
 The following options are supported (there are no short flags):
 
 - `--silent` disable's the debug message's that are shown always on `npm install`
-- `--cwd` set's the current working directory as the module directory
 - `--module` manually set the module directory (must be a path from the current working directory)
 - `--save` will let `npm install` update your `package.json` (otherwise it is restored automatically)
 

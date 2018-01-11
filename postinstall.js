@@ -5,7 +5,6 @@
 // CLI options
 
 const NOT_SILENT = process.argv.indexOf( "--silent" ) === -1;
-const CWD = process.argv.indexOf( "--cwd" ) === -1;
 const MODULE = process.argv.indexOf( "--module" );
 const NO_SAVE = process.argv.indexOf( "--save" ) === -1;
 
@@ -20,8 +19,9 @@ const satisfies = require( "semver" ).satisfies;
 
 // Settings
 
+const $cwd = process.cwd();
 const $module = MODULE !== -1 ? process.argv[ MODULE + 1 ]
-    : CWD ? process.cwd()
+    : __dirname !== $cwd ? $cwd
     : join( __dirname, "..", ".." );
 
 const $node_modules = join( $module, "node_modules" );
