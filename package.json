@@ -23,6 +23,9 @@
         "lint": "eslint *.js",
         "postversion": "git push --follow-tags && npm publish"
     },
+    "dependencies": {
+        "semver": "latest"
+    },
     "devDependencies": {
         "eslint": "latest",
         "eslint-config-futagozaryuu": "latest"
