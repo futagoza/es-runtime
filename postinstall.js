@@ -31,14 +31,7 @@ const $dependencies = {
 
     parent: {},
 
-    required: [
-
-        "@babel/runtime",
-        "@babel/polyfill",
-        "core-js",
-        "regenerator-runtime",
-
-    ],
+    required: require( "./package.json" ).requiredDependencies,
 
 };
 

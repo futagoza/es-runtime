@@ -31,6 +31,12 @@
         "eslint": "latest",
         "eslint-config-futagozaryuu": "latest"
     },
+    "requiredDependencies": [
+        "@babel/runtime",
+        "@babel/polyfill",
+        "core-js",
+        "regenerator-runtime"
+    ],
     "engines": {
         "node": ">= 4"
     }
