@@ -7,11 +7,13 @@
 const NOT_SILENT = process.argv.indexOf( "--silent" ) === -1;
 const CWD = process.argv.indexOf( "--cwd" ) === -1;
 const MODULE = process.argv.indexOf( "--module" );
+const NO_SAVE = process.argv.indexOf( "--save" ) === -1;
 
 // Dependencies
 
 const existsSync = require( "fs" ).existsSync;
 const readFileSync = require( "fs" ).readFileSync;
+const writeFileSync = require( "fs" ).writeFileSync;
 const execSync = require( "child_process" ).execSync;
 const join = require( "path" ).join;
 const satisfies = require( "semver" ).satisfies;
@@ -88,6 +90,8 @@ function install( $dependency, $version ) {
 
 // Main
 
+let $packageData;
+
 if ( MODULE === -1 && process.cwd() === __dirname ) {
 
     debug( `Cannot run in ${ __dirname }` );
@@ -98,6 +102,7 @@ if ( MODULE === -1 && process.cwd() === __dirname ) {
 if ( existsSync( $package ) ) {
 
     $dependencies.parent = readJSON( $package ).dependencies || {};
+    if ( NO_SAVE ) $packageData = readFileSync( $package, "utf8" );
 
 }
 
@@ -106,3 +111,5 @@ $dependencies.required.forEach( $dependency => {
     install( $dependency, $dependencies.parent[ $dependency ] || "*" );
 
 } );
+
+if ( NO_SAVE ) writeFileSync( $package, $packageData, "utf8" );
