@@ -15,13 +15,13 @@
     "author": "Futago-za Ryuu",
     "files": [
         "polyfill.js",
-        "postinstall.js"
+        "es-runtime.js"
     ],
     "main": "polyfill.js",
-    "bin": "postinstall.js",
+    "bin": "es-runtime.js",
     "scripts": {
         "lint": "eslint *.js test/*.js",
-        "test": "rimraf test/node_modules && node postinstall --module test && node test/assert",
+        "test": "rimraf test/node_modules && node es-runtime --module test && node test/assert",
         "postversion": "git push --follow-tags && npm publish"
     },
     "dependencies": {
