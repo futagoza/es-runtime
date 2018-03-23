@@ -14,10 +14,10 @@
     "license": "MIT",
     "author": "Futago-za Ryuu",
     "files": [
-        "polyfill.js",
+        "index.js",
         "es-runtime.js"
     ],
-    "main": "polyfill.js",
+    "main": "index.js",
     "bin": "es-runtime.js",
     "scripts": {
         "lint": "eslint *.js test/*.js",
