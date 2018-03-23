@@ -20,7 +20,6 @@
     "main": "polyfill.js",
     "bin": "postinstall.js",
     "scripts": {
-        "postinstall": "node postinstall.js",
         "lint": "eslint *.js test/*.js",
         "test": "rimraf test/node_modules && node postinstall --module test && node test/assert",
         "postversion": "git push --follow-tags && npm publish"
