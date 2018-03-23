@@ -26,6 +26,8 @@
         "postversion": "git push --follow-tags && npm publish"
     },
     "dependencies": {
+        "@babel/polyfill": "latest",
+        "@babel/runtime": "latest",
         "semver": "latest"
     },
     "devDependencies": {
